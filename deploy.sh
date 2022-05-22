@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+# 當發生錯誤時終止腳本運行
+set -e
+
+# 因為dist資料夾預設是被ignore的，因此在進入dist資料夾後初始化git
+git init 
+git add -A
+git commit -m 'deploy'
+
+git push orign main
+cd -
+
+# 執行指令，在終端機輸入 deploy.sh
